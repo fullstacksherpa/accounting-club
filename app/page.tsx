@@ -5,7 +5,7 @@ import Link from "next/link";
 import {client, urlFor} from "../lib/sanity"
 import {simpleBlogCard} from "@/lib/interface";
 
-export const revalidate = 30; // revalidate at most 30 seconds
+export const revalidate = 10800; // revalidate at most 30 seconds
 
 async function getData() {
   const query = `

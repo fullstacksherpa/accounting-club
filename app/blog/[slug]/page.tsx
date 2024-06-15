@@ -3,7 +3,7 @@ import {client, urlFor} from "@/lib/sanity"
 import {PortableText} from "@portabletext/react";
 import Image from "next/image";
 
-export const revalidate = 30; // revalidate at most 30 seconds
+export const revalidate = 10800;
 
 async function getData(slug: string) {
 	const query = `
