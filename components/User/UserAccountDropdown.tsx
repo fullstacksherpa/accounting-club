@@ -17,7 +17,7 @@ import UserAvatar from "@/components/User/UserAvatar";
 import {Icons} from "@/components/Icons";
 
 interface UserAccountDropdownProps {
-	session: Session;
+	session: any
 }
 
 export type DropdownItemType = {
@@ -64,6 +64,8 @@ const UserAccountDropdown: FC<UserAccountDropdownProps> = ({session}) => {
 		}
 	}, [user.role]);
 
+	const signOut = () => { }
+
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger className="focus:outline-none">
@@ -99,9 +101,10 @@ const UserAccountDropdown: FC<UserAccountDropdownProps> = ({session}) => {
 				<DropdownMenuItem
 					onSelect={(event) => {
 						event.preventDefault();
-						signOut({
-							callbackUrl: `${window.location.origin}/sign-in`,
-						});
+						// signOut({
+						// 	callbackUrl: `${window.location.origin}/sign-in`,
+						// });
+						signOut()
 					}}
 					className="cursor-pointer"
 				>
