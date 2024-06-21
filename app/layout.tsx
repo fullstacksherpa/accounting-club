@@ -1,8 +1,9 @@
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 import {ThemeProvider} from "@/components/theme-provider";
+import Footer from "@/components/Footer";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -26,9 +27,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="max-w-2xl mx-auto px-4">
+          <main className="flex-1">
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

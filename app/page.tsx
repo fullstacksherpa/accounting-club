@@ -1,52 +1,56 @@
-import Image from "next/image";
-import {Card, CardContent} from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
-import Link from "next/link";
-import {client, urlFor} from "../lib/sanity"
-import {simpleBlogCard} from "@/lib/interface";
 
-export const revalidate = 10800; // revalidate at most 30 seconds
+import {Suspense} from "react";
+import {Balancer} from "react-wrap-balancer";
+import BlogHome from "./blog/page";
+import BlogCardSkeleton from "@/components/SkeletonLoaders/blogSkeleton";
+import OverviewSkeleton from "@/components/SkeletonLoaders/OverviewSkeleton";
+import Overview from "@/components/Overview/Overview";
 
-async function getData() {
-  const query = `
-  *[_type == 'blog'] | order(_createdAt desc) {
-    title,
-      smallDescription,
-      "currentSlug": slug.current,
-      titleImage
-  }`;
 
-  const data = await client.fetch(query);
 
-  return data;
-}
+export const fetchCache = "force-no-store";
+export const dynamic = "force-dynamic";
 
-export default async function Home() {
-  const data: simpleBlogCard[] = await getData();
-  console.log(data)
+export default function Home() {
   return (
-    <div className="grid grid-cols-1  md:grid-cols-2 mt-5 gap-5">
-      {data.map((post, idx) => (
-        <Card key={idx}>
-          <Image
-            src={urlFor(post.titleImage).url()}
-            alt="image"
-            width={500}
-            height={500}
-            className="rounded-t-lg h-[200px] object-cover"
-          />
+    <main className="grid items-center gap-8 pb-8 pt-6 md:py-8 container">
+      <section
+        id="hero"
+        aria-labelledby="hero-heading"
+        className="mx-auto flex w-full max-w-[64rem] flex-col items-center justify-center gap-4 pb-8 pt-6 text-center md:pb-12 md:pt-10 lg:pt-24 lg:pb-10"
+      >
+        <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
+          Discover, Connect, and Explore the Fascinating World of Accounting
+        </h1>
+        <Balancer className="max-w-[46rem] text-lg text-muted-foreground sm:text-xl">
+          Welcome to the Accounting Club, where everybody counts—literally. Join us and dive into the thrilling world of balance sheets and spreadsheets, because who needs excitement when you have numbers?
+        </Balancer>
+      </section>
+      <Suspense fallback={<OverviewSkeleton />}>
+        <Overview />
+      </Suspense>
 
-          <CardContent className="mt-5">
-            <h3 className="text-lg line-clamp-2 font-bold">{post.title}</h3>
-            <p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">
-              {post.smallDescription}
-            </p>
-            <Button asChild className="w-full mt-7">
-              <Link href={`/blog/${post.currentSlug}`}>Read More</Link>
-            </Button>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+      <div className="flex flex-col gap-y-2">
+        <h2 className="text-2xl font-semibold tracking-tight">Upcoming events</h2>
+        <p className="text-sm text-muted-foreground">
+          events from cpabc
+        </p>
+        <Suspense fallback={<BlogCardSkeleton />}>
+          <BlogHome />
+        </Suspense>
+      </div>
+      <div className="flex flex-col gap-y-2">
+        <h2 className="text-2xl font-semibold tracking-tight">
+          Blogs
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          Enhance your knowledge by exploring our blog.
+        </p>
+
+        <Suspense fallback={<BlogCardSkeleton />}>
+          <BlogHome />
+        </Suspense>
+      </div>
+    </main>
   );
 }
