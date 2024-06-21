@@ -23,7 +23,7 @@ interface UserAccountDropdownProps {
 export type DropdownItemType = {
 	id: number;
 	label: string;
-	Icon: Icon;
+	Icon: any;
 	href: string;
 };
 
