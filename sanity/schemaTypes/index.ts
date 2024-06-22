@@ -1,2 +1,3 @@
 import blog from './blog'
-export const schemaTypes = [blog]
+import event from './event'
+export const schemaTypes = [blog, event]

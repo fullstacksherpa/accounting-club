@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      transitionTimingFunction: {
+        'custom-bezier': 'cubic-bezier(0.68, -0.55, 0.27, 1.55)',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

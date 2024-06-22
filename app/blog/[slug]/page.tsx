@@ -26,10 +26,10 @@ export default async function BlogArticle({
 	const data: fullBlog = await getData(params.slug);
 
 	return (
-		<div className="mt-8">
+		<div className="pt-8 w-full overflow-x-hidden bg-green-400 px-8">
 			<h1>
 				<span className="block text-base text-center text-primary font-semibold tracking-wide uppercase">
-					Sherpa - Blog
+					slug-Blog
 				</span>
 				<span className="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">
 					{data.title}

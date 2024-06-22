@@ -1,5 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import {MoveRight} from 'lucide-react';
 
 // import {getAuthSession} from "@/lib/auth";
 import {cn} from "@/lib/utils";
@@ -24,7 +25,7 @@ const Navbar = async () => {
 		{
 			id: 1,
 			label: "Home",
-			href: "/home",
+			href: "/",
 		},
 		{
 			id: 2,
@@ -82,8 +83,12 @@ const Navbar = async () => {
 					<UserAccountDropdown session={session} />
 				) : (
 					<Link href="/sign-in" className=" tracking-tighter">
-						<Button className="mx-2 w-full" size="sm">
-							Join the Club
+						<Button className="mx-2 w-full group" size="sm">
+							<div className="flex gap-2 items-center">
+								Join the Club
+								<MoveRight className="transition-transform duration-300 ease-in-out group-hover:scale-125 group-hover:transition-custom-bezier" />
+							</div>
+
 							<div className="sr-only">Sign In</div>
 						</Button>
 					</Link>

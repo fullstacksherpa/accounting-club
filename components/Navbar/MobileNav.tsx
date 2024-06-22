@@ -28,7 +28,7 @@ export default function MobileNav({session}: MobileNavProps) {
 		{
 			id: 1,
 			label: "Home",
-			href: "/home",
+			href: "/",
 		},
 		{
 			id: 2,
