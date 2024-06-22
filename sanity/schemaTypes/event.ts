@@ -22,6 +22,17 @@ export default {
 			name: 'format',
 			type: 'string',
 			title: 'Online or In-person',
+			options: {
+				list: [
+					{title: 'Online', value: 'online'},
+					{title: 'In-person', value: 'in-person'},
+				],
+			},
+		},
+		{
+			name: 'href',
+			type: 'url',
+			title: 'URL'
 		},
 
 	],

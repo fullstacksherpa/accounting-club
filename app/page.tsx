@@ -2,6 +2,7 @@
 import {Suspense} from "react";
 import {Balancer} from "react-wrap-balancer";
 import BlogHome from "./blog/page";
+import Events from "./events/page";
 import BlogCardSkeleton from "@/components/SkeletonLoaders/blogSkeleton";
 import OverviewSkeleton from "@/components/SkeletonLoaders/OverviewSkeleton";
 import Overview from "@/components/Overview/Overview";
@@ -36,7 +37,7 @@ export default function Home() {
           events from cpabc
         </p>
         <Suspense fallback={<BlogCardSkeleton />}>
-          <BlogHome />
+          <Events />
         </Suspense>
       </div>
       <div className="flex flex-col gap-y-2">

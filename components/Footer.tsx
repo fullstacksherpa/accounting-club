@@ -26,7 +26,7 @@ const Footer = () => {
 						</p>
 					</div>
 					<div className='text-center'>
-						<p className='text-sm text-muted-foreground'>website developed by <span onClick={handleClick} className='dark:text-white hover:underline hover:text-purple-900'>fullstacksherpa</span></p>
+						<p className='text-sm text-muted-foreground'>Site architecture and support by <span onClick={handleClick} className='dark:text-white hover:underline hover:text-purple-900'>fullstacksherpa</span></p>
 					</div>
 
 					<div className='flex items-center justify-center'>

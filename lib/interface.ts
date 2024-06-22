@@ -11,3 +11,11 @@ export interface fullBlog {
 	content: any;
 	titleImage: any;
 }
+
+export interface simpleEventCard {
+	date: string;
+	title: string;
+	smallDescription: string;
+	format: string;
+	href: string;
+}
