@@ -1,12 +1,19 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import {MoveRight} from 'lucide-react';
+import {
+	ClerkProvider,
+	SignedIn,
+	SignedOut,
+	SignInButton,
+	UserButton,
+} from "@clerk/nextjs";
 
 // import {getAuthSession} from "@/lib/auth";
 import {cn} from "@/lib/utils";
 import {Button, buttonVariants} from "@/components/ui/button";
 import UserAccountDropdown from "@/components/User/UserAccountDropdown";
 import Logo from "@/components/Logo";
+import {MoveRight} from "lucide-react";
 
 
 
@@ -58,7 +65,7 @@ const Navbar = async () => {
 						href="/"
 						className={cn(
 							buttonVariants({variant: "link"}),
-							"text-md tracking-tighter"
+							"text-sm tracking-tighter"
 						)}>
 						<Logo />
 					</Link>
@@ -78,11 +85,13 @@ const Navbar = async () => {
 				</div>
 			</div>
 			<div className="flex gap-x-4 items-center">
-
-				{session ? (
-					<UserAccountDropdown session={session} />
-				) : (
-					<Link href="/sign-in" className=" tracking-tighter">
+				<SignedIn>
+					{/* Mount the UserButton component */}
+					<UserButton />
+				</SignedIn>
+				<SignedOut>
+					{/* Signed out users get sign in button */}
+					<Link href="/sign-up" className=" tracking-tighter">
 						<Button className="mx-2 w-full group" size="sm">
 							<div className="flex gap-2 items-center">
 								Join the Club
@@ -92,7 +101,22 @@ const Navbar = async () => {
 							<div className="sr-only">Sign In</div>
 						</Button>
 					</Link>
-				)}
+				</SignedOut>
+
+				{/* {session ? (
+					<UserAccountDropdown session={session} />
+				) : (
+					<Link href="/sign-up" className=" tracking-tighter">
+						<Button className="mx-2 w-full group" size="sm">
+							<div className="flex gap-2 items-center">
+								Join the Club
+								<MoveRight className="transition-transform duration-300 ease-in-out group-hover:scale-125 group-hover:transition-custom-bezier" />
+							</div>
+
+							<div className="sr-only">Sign In</div>
+						</Button>
+					</Link>
+				)} */}
 			</div>
 		</div>
 	);
