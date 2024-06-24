@@ -26,15 +26,7 @@ export default async function BlogArticle({
 	const data: fullBlog = await getData(params.slug);
 
 	return (
-		<div className="pt-8 w-full overflow-x-hidden bg-green-400 px-8">
-			<h1>
-				<span className="block text-base text-center text-primary font-semibold tracking-wide uppercase">
-					slug-Blog
-				</span>
-				<span className="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">
-					{data.title}
-				</span>
-			</h1>
+		<div className="pt-3 lg:pt-8 w-full overflow-x-hidden  pb-20 px-8 items-center content-center flex flex-col ">
 
 			<Image
 				src={urlFor(data.titleImage).url()}
@@ -45,7 +37,7 @@ export default async function BlogArticle({
 				className="rounded-lg mt-8 border"
 			/>
 
-			<div className="mt-16 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
+			<div className="mt-2 lg:mt-9 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
 				<PortableText value={data.content} />
 			</div>
 		</div>

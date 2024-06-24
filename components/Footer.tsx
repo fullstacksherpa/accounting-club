@@ -11,13 +11,13 @@ const Footer = () => {
 		window.open('https://www.fullstacksherpa.tech/', '_blank');
 	}
 	return (
-		<footer className='bg-white h-20 relative'>
+		<footer className=' h-20 relative'>
 			<MaxWidthWrapper>
 				<div className="py-20 px-4 md:px-8 lg:px-16 xl:32 2xl:px-64  text-sm ">
 					{/* TOP */}
 
 				</div>
-				<div className='border-t border-[rgba(33,38,166,0.93)]' />
+				<div className='border-t border-[rgba(29,31,92,0.93)] w-[70%] mx-auto pb-3 lg:pb-0' />
 
 				<div className='h-full flex flex-col md:flex-row md:justify-between justify-center items-center'>
 					<div className='text-center md:text-left pb-2 md:pb-0'>
@@ -26,7 +26,7 @@ const Footer = () => {
 						</p>
 					</div>
 					<div className='text-center'>
-						<p className='text-sm text-muted-foreground'>Site architecture and support by <span onClick={handleClick} className='dark:text-white hover:underline hover:text-purple-900'>fullstacksherpa</span></p>
+						<p className='text-sm text-muted-foreground'>website architecture and support by <span onClick={handleClick} className='dark:text-white hover:underline hover:text-purple-900'>fullstacksherpa</span></p>
 					</div>
 
 					<div className='flex items-center justify-center'>

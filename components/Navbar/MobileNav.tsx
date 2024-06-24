@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import {useState} from "react";
 import {usePathname} from "next/navigation";
@@ -58,10 +57,9 @@ export default function MobileNav({session}: MobileNavProps) {
 			<SheetTrigger asChild>
 				<Button
 					variant="ghost"
-					className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
+					className="mr-2 lg:hidden text-[#2D4F8F]"
 				>
-					<Icons.menu className="h-6 w-6" />
-					<span className="sr-only">Toggle Menu</span>
+					<Icons.menu className="h-8 w-8" />
 				</Button>
 			</SheetTrigger>
 			<SheetContent side="left" className="pl-1 pr-0">
@@ -75,21 +73,22 @@ export default function MobileNav({session}: MobileNavProps) {
 						<Logo arial-hidden="true" />
 					</Link>
 				</div>
-				<ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-					<div className="pl-1 pr-7 flex flex-col justify-center items-center">
-						{navItems.map((item) => (
-							<Link
-								href={item.href}
-								key={item.id}
-								className={cn(
-									buttonVariants({variant: "link"}),
-									"text-sm font-medium"
-								)}>
-								{item.label}
-							</Link>
-						))}
-					</div>
-				</ScrollArea>
+
+				<div className="pl-1 pr-7 flex flex-col justify-center items-center h-[60vh] gap-8">
+					{navItems.map((item) => (
+						<Link
+							href={item.href}
+							onClick={() => setIsOpen(false)}
+							key={item.id}
+							className={cn(
+								buttonVariants({variant: "link"}),
+								"text-2xl font-medium"
+							)}>
+							{item.label}
+						</Link>
+					))}
+				</div>
+
 			</SheetContent>
 		</Sheet>
 	);

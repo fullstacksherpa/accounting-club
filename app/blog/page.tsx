@@ -25,9 +25,9 @@ export default async function BlogHome() {
 	const data: simpleBlogCard[] = await getData();
 	console.log(data)
 	return (
-		<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 mt-5 gap-5">
+		<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 mt-5 gap-10">
 			{data.map((post, idx) => (
-				<Card key={idx} className="group">
+				<Card key={idx} className="group shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] rounded-3xl">
 					<Image
 						src={urlFor(post.titleImage).url()}
 						alt="image"
@@ -36,7 +36,7 @@ export default async function BlogHome() {
 						className="rounded-t-lg h-[200px] object-cover"
 					/>
 
-					<CardContent className="mt-5">
+					<CardContent className="pt-5 border-gray-200 border-t-2">
 						<h3 className="text-lg line-clamp-2 font-bold">{post.title}</h3>
 						<p className="line-clamp-3 text-sm mt-2 text-gray-600 dark:text-gray-300">
 							{post.smallDescription}
