@@ -5,7 +5,7 @@ import Link from "next/link";
 import {client, urlFor} from "../../lib/sanity"
 import {simpleBlogCard} from "@/lib/interface";
 
-export const revalidate = 10800; // revalidate at most 30 seconds
+// export const revalidate = 10800; // revalidate at most 30 seconds
 
 async function getData() {
 	const query = `
@@ -25,7 +25,7 @@ export default async function BlogHome() {
 	const data: simpleBlogCard[] = await getData();
 	console.log(data)
 	return (
-		<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 mt-5 gap-10">
+		<div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 mt-5 gap-10 px-11">
 			{data.map((post, idx) => (
 				<Card key={idx} className="group shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] rounded-3xl">
 					<Image

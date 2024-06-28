@@ -2,10 +2,8 @@
 import Link from "next/link";
 import {useState} from "react";
 import {usePathname} from "next/navigation";
-
 import {cn} from "@/lib/utils";
 import {Button, buttonVariants} from "@/components/ui/button";
-import {ScrollArea} from "@/components/ui/scroll-area";
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
 import {Icons} from "@/components/Icons"
 import Logo from "@/components/Logo";
@@ -37,7 +35,7 @@ export default function MobileNav({session}: MobileNavProps) {
 		{
 			id: 3,
 			label: "Blogs",
-			href: "/blogs",
+			href: "/blog",
 		},
 		{
 			id: 4,
@@ -57,7 +55,7 @@ export default function MobileNav({session}: MobileNavProps) {
 			<SheetTrigger asChild>
 				<Button
 					variant="ghost"
-					className="mr-2 lg:hidden text-[#2D4F8F]"
+					className=" lg:hidden text-[#2D4F8F]"
 				>
 					<Icons.menu className="h-8 w-8" />
 				</Button>
@@ -82,7 +80,8 @@ export default function MobileNav({session}: MobileNavProps) {
 							key={item.id}
 							className={cn(
 								buttonVariants({variant: "link"}),
-								"text-2xl font-medium"
+								{'border border-w-2  bg-gradient-to-r from-[#0092CB] via-[#2D4F8F] to-[#422774] rounded-2xl text-white': pathname === item.href},
+								"text-2xl font-medium hover:underline"
 							)}>
 							{item.label}
 						</Link>
