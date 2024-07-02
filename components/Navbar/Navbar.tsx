@@ -3,7 +3,6 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import {usePathname} from "next/navigation";
 import {
-	ClerkProvider,
 	SignedIn,
 	SignedOut,
 	SignInButton,

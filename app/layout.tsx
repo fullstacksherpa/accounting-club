@@ -44,9 +44,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <link rel="icon" href="/fevicon.png" sizes="any" />
+
+    <html lang="en">
+      <link rel="icon" href="/fevicon.png" sizes="any" />
+      <ClerkProvider>
         <body className={`${firaCode.className} bg-paper`}>
           <Navbar />
           {/* <main className="flex-1"> */}
@@ -57,7 +58,8 @@ export default function RootLayout({
           <SpeedInsights />
           <Analytics />
         </body>
-      </html>
-    </ClerkProvider>
+      </ClerkProvider>
+    </html>
+
   );
 }
