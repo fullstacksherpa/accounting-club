@@ -17,7 +17,7 @@ export default function Home() {
           Discover,  Connect, and Explore the Fascinating World of Accounting
         </h1>
         <div className="max-w-[54rem] text-lg text-muted-foreground sm:text-xl">
-          Welcome to the Accounting Club, where everybody counts.<br /> Join us and dive into the thrilling world of balance sheets and spreadsheets.
+          Welcome to the Accounting Club, where everybody counts.<br /> Join us to explore the fascinating world of accounting, read insightful blogs, and receive support and training to develop job-ready skills.
         </div>
       </section>
 
