@@ -57,7 +57,7 @@ export default function MobileNav({session}: MobileNavProps) {
 					variant="ghost"
 					className=" lg:hidden text-[#2D4F8F]"
 				>
-					<Icons.menu className="h-8 w-8" />
+					<Icons.menu className="h-10 w-10" />
 				</Button>
 			</SheetTrigger>
 			<SheetContent side="left" className="pl-1 pr-0">
@@ -65,7 +65,7 @@ export default function MobileNav({session}: MobileNavProps) {
 					<Link
 						aria-label="Home"
 						href="/"
-						className="flex items-center"
+						className="flex items-center text-4xl"
 						onClick={() => setIsOpen(false)}
 					>
 						<Logo arial-hidden="true" />

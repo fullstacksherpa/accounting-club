@@ -29,7 +29,7 @@ const Footer = () => {
 						<p className='text-sm text-muted-foreground'>website architecture and support by <span onClick={handleClick} className='dark:text-white underline hover:text-purple-900 underline-offset-4 pb-1'>fullstacksherpa</span></p>
 					</div>
 
-					<div className='flex items-center justify-center pb-5'>
+					<div className='flex items-center justify-center pb-5 lg:pb-0'>
 						<div className='flex space-x-8'>
 							<Link
 								href='#'

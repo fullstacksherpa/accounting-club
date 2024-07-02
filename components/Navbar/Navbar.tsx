@@ -57,7 +57,7 @@ const Navbar = () => {
 	];
 
 	return (
-		<div className="sticky top-0 z-40 w-[100vw]  flex justify-between lg:space-around items-center py-2 border-b backdrop-blur-lg  px-2 lg:px-16 overflow-x-hidden">
+		<div className="sticky top-0 z-40 w-[100vw]  flex justify-between lg:space-around items-center py-2 border-b lg:backdrop-blur-lg bg-[#F0F0F0] lg:bg-transparent px-2 lg:px-16 overflow-x-hidden">
 			<MobileNav session={session} />
 			<div className="w-full lg:flex hidden gap-x-20 items-center">
 				<div className="relative z-20 flex items-center">
