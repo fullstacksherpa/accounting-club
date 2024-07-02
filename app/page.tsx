@@ -4,6 +4,7 @@ import Events from "./events/page";
 import BlogCardSkeleton from "@/components/SkeletonLoaders/blogSkeleton";
 import SectionTitle from "@/components/SectionTitle";
 import {Lilita_One} from "next/font/google";
+import Contribute from "@/components/Contribute";
 
 
 const font = Lilita_One({weight: "400", subsets: ["latin"]});
@@ -34,6 +35,9 @@ export default function Home() {
         <Suspense fallback={<BlogCardSkeleton />}>
           <BlogHome />
         </Suspense>
+      </div>
+      <div className="flex flex-cols py-6 justify-center items-center">
+        <Contribute />
       </div>
     </main>
   );
