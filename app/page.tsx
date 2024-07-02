@@ -21,8 +21,8 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex flex-col gap-y-2">
-        <SectionTitle title="Upcoming events" sub="most of the events are hosted by CPABC" />
+      <div className="flex flex-col gap-y-1 lg:gap-y-2">
+        <SectionTitle title="Upcoming events" sub="most of the events are hosted by CPABC." />
         <Suspense fallback={<BlogCardSkeleton />}>
           <Events />
         </Suspense>

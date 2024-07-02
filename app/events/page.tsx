@@ -30,7 +30,7 @@ export default async function Events() {
 		: <p className='text-2xl'>Welcome Back,<span className={`${font.className} text-3xl bg-gradient-to-r from-[#0092CB] via-[#2D4F8F] to-[#422774] bg-clip-text tracking-widest text-transparent font-bold`}>{user.firstName}</span></p>;
 	return (
 		<>
-			<div className='flex items-center justify-center mt-5 pt-6'>
+			<div className='flex items-center justify-center mt-1 lg:mt-3 pt-6'>
 				<div>{greeting}</div>
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-x-9 px-[3%] gap-y-9 pt-6">
